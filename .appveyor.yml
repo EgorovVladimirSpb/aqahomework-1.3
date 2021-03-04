@@ -1,19 +1,20 @@
-  
-image: Ubuntu  
 
-stack: jdk 11
+
+image: Ubuntu
 
 branches:
   only:
     - master
 
-build: off 
+build: off
 
 install:
-  - java -jar ./artifacts/app-order.jar &
+
+  - ps: $App = Start-Process -FilePath java -ArgumentList "-jar ./artifacts/app-order.jar" -PassThru
 
 build_script:
   - ps:  chmod +x gradlew
   - ps: ./gradlew test --info "-Dselenide.headless=true"
-  - chmod +x chromedriver
 
+on_finish:
+  - ps: Stop-Process -Id $App.Id
