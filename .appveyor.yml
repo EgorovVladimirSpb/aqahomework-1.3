@@ -13,4 +13,7 @@ install:
   - java -jar ./artifacts/app-order.jar &
 
 build_script:
-  - ./gradlew test --info
+  - ps:  chmod +x gradlew
+  - ps: ./gradlew test --info "-Dselenide.headless=true"
+  - chmod +x chromedriver
+
