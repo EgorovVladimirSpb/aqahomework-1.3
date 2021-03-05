@@ -18,7 +18,7 @@ public class AppOrderTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "F:\\QA learning\\Automatization\\1.3\\driver\\win\\chromedriver.exe");
     }
 
     @BeforeEach
