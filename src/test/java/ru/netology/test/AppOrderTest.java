@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppOrderTest {
 
@@ -82,15 +83,5 @@ public class AppOrderTest {
         String text = driver.findElement(By.cssSelector("span[data-test-id = \"phone\"] span + span +span")).getText();
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", text.trim());
     }
-
-//    @Test
-//    void shouldTestWebFormBoxUnchecked() {
-//        driver.get("http://localhost:9999");
-//        driver.findElement(By.cssSelector("input[type='text']")).sendKeys("Егоров Владимир");
-//        driver.findElement(By.cssSelector("input[type='tel']")).sendKeys("+79219212121");
-//        driver.findElement(By.cssSelector("[role='button']")).click();
-//        String text = driver.findElement(By.cssSelector("")).getText();
-//        assertEquals("", text.trim());
-//    }
 
 }
